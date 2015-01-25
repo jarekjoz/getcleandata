@@ -1,4 +1,21 @@
-### Reads files
+### Loads plyr & dplyr (and installs them if necessary)
+suppressWarnings(
+      if (!require(plyr)) {
+      install.packages("plyr")
+      library(plyr)
+} else {
+      library(plyr)
+}
+)
+suppressWarnings(
+      if (!require(dplyr)) {
+      install.packages("dplyr")
+      library(dplyr)
+} else {
+      library(dplyr)
+}
+)
+### Reads required files
 test_data <- read.table("./test/X_test.txt")
 training_data <- read.table("./train/X_train.txt")
 test_labels <- read.table("./test/y_test.txt")
@@ -7,10 +24,6 @@ test_subjects <- read.table("./test/subject_test.txt")
 training_subjects <- read.table("./train/subject_train.txt")
 features <- read.table("./features.txt")
 labels_readable <- read.table("./activity_labels.txt")
-### Loads plyr, dplyr & tidyr
-library(plyr)
-library(dplyr)
-library(tidyr)
 ### Adds descriptive column name to subject and activity vectors
 colnames(test_subjects) <- "subject"
 colnames(training_subjects) <- "subject"
