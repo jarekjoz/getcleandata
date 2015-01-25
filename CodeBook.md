@@ -2,18 +2,8 @@ The dataset provides data obtained as a result of a study of human activity cond
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
-**The present dataset is a result of a few procedures carried out on the original files:**
 
-* The training dataset and the test dataset were merged with datasets containing the number of the subject for each measurement as well as the numeric id of the activity performed in each measurement.
-* The numeric id's of activities were replaced with descriptive names
-* The training and the test datasets were merged to form one dataset. Every measurement was assigned a variable telling whether it was a measurement for the test dataset or the training dataset.
-* Every variable was given a descriptive name.
-* From all variables, only the variables giving mean values and standard deviations were selected
-* Finally, with the use of the data obtained in the previous step, a mean value of **every** variable was calculated. This value was calculated for every subject and every activity (i.e. there are six measurements for every subject, because there are six activities).
-
-
-
-### Feature description:
+### Feature description (of the original dataset):
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -62,9 +52,12 @@ These signals were used to estimate variables of the feature vector for each pat
 * bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
 * angle(): Angle between to vectors.
 
-**The dataset provided** contains only the mean() and std() values.
-Examples of variable names:
+**The present dataset is a result of a number procedures carried out on the original files:**
 
-*tBodyAcc-mean()-X*
+* The training dataset and the test dataset were merged with datasets containing the number of the subject for each measurement as well as the numeric id of the activity performed in each measurement.
+* The numeric id's of activities were replaced with descriptive names
+* The training and the test datasets were merged to form one dataset. Every measurement was assigned a variable telling whether it was a measurement for the test dataset or the training dataset.
+* Every variable was given a descriptive name.
+* From all variables, only the variables giving mean values and standard deviations were selected
+* Finally, with the use of the data obtained in the previous step, a mean value of **every** variable was calculated. This value was calculated for every subject and every activity (i.e. there are six measurements for every subject, because there are six activities).
 
-*fBodyGyro-std()-X*
